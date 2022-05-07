@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-python@master
       - name: Install packages
         run: |
-          pip3 install requests ddddocr
+          pip3 install requests && pip install ddddocr
       - name: Clock In
         env:
           ACCOUNT: ${{ secrets.ACCOUNT }}
