@@ -94,11 +94,14 @@ class DaKa(object):
             try:
                 res = self.sess.get(self.imgaddress, headers=self.headers)
                 code = self.ocr_classifier.classification(res.content)
+                # with open("x.png", 'wb') as f:
+                    # f.write(res.content)
+                # print(code)
                 if not code:
-                    self.Push('验证码识别失败，请重试')
+                    print('验证码识别失败，请重试')
                     return
                 else:
-                    self.Push('验证码识别成功，请稍后')
+                    print('验证码识别成功，请稍后')
             except:
                 print('验证码识别失败')
 
